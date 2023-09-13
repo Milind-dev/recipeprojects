@@ -12,7 +12,6 @@ const Localfiles = () => {
   const [foodstores, setfoodstores] = useState([]);
   const [addcartspoon, setaddcartspoon] = useState([]);
 
-
   // const [errormessage,seterrormsg] = useState("error msg");
   const [inputloader,setinputLoader] = useState("loader...");
 
@@ -39,10 +38,10 @@ const Localfiles = () => {
       // setfoodstores(searchresult)
     }
     catch(err){
-      //  seterrormsg("error")
+       // seterrormsg("error")
        setinputLoader("error")
 
-           }
+    }
 
   }
 
@@ -106,7 +105,7 @@ const Localfiles = () => {
             className="foodsearchinput"
             value={inputsearch}
             onChange={(e) =>  setinputsearch(e.target.value)}
-            placeholder="search  food"
+            placeholder="search food"
           />
         </div>
         <button className="addsortAsc" onClick={handleSortAsc}>
@@ -138,8 +137,8 @@ const Localfiles = () => {
           })
         ) : (
           <div style={{marginLeft:"79vh"}}>
-          <span> <p style={{marginLeft:"-92vh"}}>{inputloader}</p><Rings color="#00BFFF" height={180} width={180} /></span>
-      </div>
+            <span> <p style={{marginLeft:"-92vh"}}>{inputloader}</p><Rings color="#00BFFF" height={180} width={180} /></span>
+        </div>
         )}
       </div>
     </React.Fragment>

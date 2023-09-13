@@ -97,10 +97,10 @@
         display: inline-grid;
         padding-left: 1vh;
     }
-    .spinloader{
-      position: absolute;
-      left: 35vh;  
-      }
+
+  .spinloader{
+    position: absolute;
+    left: 35vh;  }
   }
 
   @media (min-width: 777px)  and (max-width: 900px) {
@@ -193,12 +193,11 @@
         display: inline-grid;
         padding-left: 1vh;
     }
-
     .spinloader{
       position: absolute;
       left: 72vh;
     }
-   }
+  }
 
 
 
@@ -247,7 +246,7 @@
       position: absolute;
       left: 90vh;
     }
- }
+  }
 
 
 
@@ -295,4 +294,5 @@
       position: absolute;
       left: 105vh;
     }
-   }
+  }
+  
