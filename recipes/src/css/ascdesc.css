@@ -1,0 +1,67 @@
+.addsortAsc{
+    color: white;
+    background: black;
+    box-shadow: 1vh;
+    border: 1px solid transparent;
+    width: 106px;
+    height: 6vh;
+    margin:3vh 17vh 2vh
+} 
+
+@media (min-width: 320px) and (max-width: 776px) {
+    .addsortAsc{
+            color: white;
+            /* background: black; */
+            box-shadow: 1vh;
+            border: 1px solid transparent;
+            width: 106px;
+            height: 6vh;
+            margin:3vh 0vh 2vh
+    } 
+}
+@media (min-width: 777px) and (max-width: 900px) {
+    .addsortAsc{
+            color: white;
+            background: black;
+            box-shadow: 1vh;
+            border: 1px solid transparent;
+            width: 106px;
+            height: 6vh;
+            margin:3vh 0vh 2vh
+    } 
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+    .addsortAsc{
+            color: white;
+            /* background: black; */
+            box-shadow: 1vh;
+            border: 1px solid transparent;
+            width: 106px;
+            height: 6vh;
+            margin:3vh 0vh 2vh
+    } 
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+    .addsortAsc{
+            color: white;
+            /* background: black; */
+            box-shadow: 1vh;
+            border: 1px solid transparent;
+            width: 106px;
+            height: 6vh;
+            margin:3vh 0vh 2vh
+    } 
+}
+
+@media (min-width: 1501px) and (max-width: 1800px) {
+    .addsortAsc{
+            color: white;
+            /* background: black; */
+            box-shadow: 1vh;
+            border: 1px solid transparent;
+            width: 106px;
+            height: 6vh;
+            margin:3vh 0vh 2vh
+    } 
+}

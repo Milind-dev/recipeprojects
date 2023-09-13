@@ -1,0 +1,21 @@
+.dashboardcontainer{
+    width: auto;
+}
+.dashboardcontainer > p{
+    margin: 4vh;
+    font-size: medium;
+    color: white;
+    background-color: black;
+    /* text-align: left; */
+}
+.dashboardcontainer > img{
+    /* display: flex; */
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 12vh;
+}
+.dashboardcontainer > a{
+    color: black;
+    padding: 3vh;
+    margin-left: -1vh ;
+}
