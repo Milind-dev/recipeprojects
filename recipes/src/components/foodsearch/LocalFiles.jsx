@@ -9,14 +9,13 @@ import { Rings } from "react-loader-spinner";
 const Localfiles = () => {
   const [loading, setLoading] = useState(false);
   const [inputsearch, setinputsearch] = useState("yogurt");
-  // const [foodstore, setfoodstore] = useState([]);
   const [foodstores, setfoodstores] = useState([]);
   const [addcartspoon, setaddcartspoon] = useState([]);
-  const [page, setPage] = useState(1);
-  const [limit, setlimit] = useState(4);
 
-  const [errormessage,seterrormsg] = useState("error msg");
-  
+
+  // const [errormessage,seterrormsg] = useState("error msg");
+  const [inputloader,setinputLoader] = useState("loader...");
+
 
   const handleSearchFood = async ()  => {
     console.log("e.target.value")
@@ -40,9 +39,11 @@ const Localfiles = () => {
       // setfoodstores(searchresult)
     }
     catch(err){
-       seterrormsg("error")
-    }
-    
+      //  seterrormsg("error")
+       setinputLoader("error")
+
+           }
+
   }
 
   const handleSortAsc = () => {
@@ -85,56 +86,27 @@ const Localfiles = () => {
   };
 
 
-  // const pagefunc = async (page, limit) => {
-  //       setlimit(limit);
-  //       const datas = await fetch(
-  //         `http://localhost:5000/pagination?page=${page}&limit=${limit}`,
-  //         {
-  //           method: "GET",
-  //           headers: {
-  //             accept: "application/json",
-  //           },
-  //         }
-  //       );
-  //       const result = await datas.json();
-  //       setTimeout(() => {
-  //         setLoading(true);
-  //         setfoodstores(result.pageshow);
-  //       }, 4000);
-  //       // console.log("pageshow", result.pageshow);
-  // };
-
-
-  // const handlepagebtn = (idx) => {
-  //   const pagebtns = idx + 1;
-  //   setPage(pagebtns);
-  // };
 
 
 
   useEffect(() => {
     setTimeout(() => {
-      // setlimit(5);
-      // pagefunc(page, limit);
+    
       handleSearchFood()
-      // myFunction();
     }, 1000);
-  // }, [inputsearch, page, limit]);
 }, [inputsearch]);
 
   return (
     <React.Fragment>
       <Addcart addcarting={addcartspoon} />
-       {/* <Recipedetails /> */}
       <div className="foodinputcontainer">
-        {/* <Addsorts foodstorestore = {foodstore} /> */}
         <div>
           <input
             type="text"
             className="foodsearchinput"
             value={inputsearch}
             onChange={(e) =>  setinputsearch(e.target.value)}
-            placeholder="search data food"
+            placeholder="search  food"
           />
         </div>
         <button className="addsortAsc" onClick={handleSortAsc}>
@@ -143,19 +115,7 @@ const Localfiles = () => {
         <button className="addsortAsc" onClick={handleSortDesc}>
           Desc
         </button>
-        {/* {foodstores.map((item, idx) => {
-          return (
-            <>
-              <div className="pagination">
-                {idx > 0 ? (
-                  <button onClick={(e) => handlepagebtn(idx)}>{idx}</button>
-                ) : (
-                  <button onClick={(e) => handlepagebtn(0)}>All {0}</button>
-                )}
-              </div>
-            </>
-          );
-        })} */}
+   
         {loading ? (
           foodstores.map((item, index) => {
             return (
@@ -177,7 +137,9 @@ const Localfiles = () => {
             );
           })
         ) : (
-          <Rings color="#00BFFF" height={180} width={180} />
+          <div style={{marginLeft:"79vh"}}>
+          <span> <p style={{marginLeft:"-92vh"}}>{inputloader}</p><Rings color="#00BFFF" height={180} width={180} /></span>
+      </div>
         )}
       </div>
     </React.Fragment>
