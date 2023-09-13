@@ -25,3 +25,6 @@ Mongodb installation is mandatory
 
 ### problems ErrorstackCapture
 ### restart =>  mongodbcampus  restart again and restart backend also command by npm run dev
+
+# screenshots project 
+inside recipe folder inside assests
