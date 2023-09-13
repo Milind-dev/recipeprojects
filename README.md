@@ -27,4 +27,4 @@ Mongodb installation is mandatory
 ### restart =>  mongodbcampus  restart again and restart backend also command by npm run dev
 
 # screenshots project 
-inside recipe folder inside assests
+inside recipe folder inside assests/images  six screenshot of project
