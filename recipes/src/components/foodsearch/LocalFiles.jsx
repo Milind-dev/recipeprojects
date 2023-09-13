@@ -15,8 +15,9 @@ const Localfiles = () => {
   const [page, setPage] = useState(1);
   const [limit, setlimit] = useState(4);
 
-  const [errormessage,seterrormsg] = useState("error msg");
-  
+  // const [errormessage,seterrormsg] = useState("error msg");
+  const [inputloader,setinputLoader] = useState("loader...");
+
 
   const handleSearchFood = async ()  => {
     console.log("e.target.value")
@@ -40,9 +41,11 @@ const Localfiles = () => {
       // setfoodstores(searchresult)
     }
     catch(err){
-       seterrormsg("error")
+       // seterrormsg("error")
+       setinputLoader("error")
+
     }
-    
+
   }
 
   const handleSortAsc = () => {
@@ -134,7 +137,7 @@ const Localfiles = () => {
             className="foodsearchinput"
             value={inputsearch}
             onChange={(e) =>  setinputsearch(e.target.value)}
-            placeholder="search data food"
+            placeholder="search food"
           />
         </div>
         <button className="addsortAsc" onClick={handleSortAsc}>
@@ -177,7 +180,9 @@ const Localfiles = () => {
             );
           })
         ) : (
-          <Rings color="#00BFFF" height={180} width={180} />
+          <div style={{marginLeft:"79vh"}}>
+            <span> <p style={{marginLeft:"-92vh"}}>{inputloader}</p><Rings color="#00BFFF" height={180} width={180} /></span>
+        </div>
         )}
       </div>
     </React.Fragment>
