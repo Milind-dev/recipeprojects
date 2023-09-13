@@ -19,6 +19,8 @@ Install mongo db, node js, npx create-react, and mongodbcampass on your laptop.
 react run - npm start
 mongodb - connect mongodbcampus
 node js -  npm run dev
-
 ### problems ErrorstackCapture
 restart =>  mongodbcampus and restart backend npm run dev
+
+# screenshots
+### inside recipe folder  some screenshot  
