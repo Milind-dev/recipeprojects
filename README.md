@@ -9,6 +9,8 @@ The user searches for specific terms such as pizza and yogurt. That key is kept 
 
 When a certain query is searched, the query data is displayed on the screen. Now, the user adds data to the cart. cart are user query specific item
 
+# third party generate
+ ### When you connect in to a website, an API key is generated. The API is quite sufficient; 4 to 5 .times the result is returned with an error 409 status. API fetch times are set by the website for one day 
  
 # How to work on the project
 ### install 
