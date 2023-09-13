@@ -13,9 +13,12 @@ When a certain query is searched, the query data is displayed on the screen.Now,
 # how to work project
 ### install 
 Install mongo db, node js, npx create-react, and mongodbcampass on your laptop.
+mongodb installation is mandatory
+
 
 # how to run 
 ### clone file https://github.com/Milind-dev/recipeprojects
+npm install for node_modules install both front and backend side
 react run - npm start
 mongodb - connect mongodbcampus
 node js -  npm run dev
