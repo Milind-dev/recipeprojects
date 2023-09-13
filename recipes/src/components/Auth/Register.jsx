@@ -5,6 +5,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
     const [username,setUsername] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [error,seterror] = useState([])
 
     const handSumbit = async (e) => {
         e.preventDefault();
@@ -23,9 +24,15 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
           });
           let datajson = await baseurl.json();
           // window.location.href = './login'
-          console.log(datajson)
+          console.log(datajson.message)
+          setUsername("")
+          setEmail("")
+          setPassword("")
+          seterror(datajson.message)
+          
         } catch (error) {
-            console.log("err",error)
+          console.log("err",error)
+          seterror(error)// setereror(error)
         }
     }
 
@@ -38,7 +45,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
       <div className="container">
         <div className="screen">
           <div class="screen__content">
-        <h1>Register</h1>
+           <h1>Register</h1>
             <form className="login" onSubmit={handSumbit}>
               <div className="login__field">
                 <i className="login__icon fas fa-user"></i>
@@ -71,10 +78,12 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
                 />
               </div>
               <button className="button login__submit">
-                <span className="button__text">Log In Now</span>
+                <span className="button__text">Register user</span>
                 <i className="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
+            <p>{error}</p>
+
             <div className="social-login">
               <h3>log in via</h3>
               <div className="social-icons">

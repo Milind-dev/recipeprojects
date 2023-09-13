@@ -7,6 +7,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 export default function Logins() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error,setError] = useState([])
 
 const handlelogin = async (e) => {
   e.preventDefault();
@@ -28,15 +29,22 @@ const handlelogin = async (e) => {
     window.location.href = './Localfile'
   }
   else{
-    setEmail("");
-    setPassword("")
+    console.log(logindata)
+    setError(logindata.message)
+    setTimeout(
+      () => {
+        setEmail("");
+        setPassword("")
+      }
+    )
+    // setError(logindata)
   }
 
 }
   
   return (
     <div>
-      <a  style={{padding:"2px",margin:"0vh 3vh"}} href="/register">Register</a>
+      <a  style={{padding:"2px",margin:"0vh 3vh"}} href="/register">sign up</a>
       <a  style={{padding:"2px",margin:"0vh 3vh"}} href="/">dashboard</a>
       <div className="container">
         <div className="screen">
@@ -68,6 +76,7 @@ const handlelogin = async (e) => {
                 <i className="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
+            <p style={{color:"black",fontWeight:"bold",fontSize:"1.6vh",margin:"-1vh"}}>{error}</p>
             <div className="social-login">
               <h3>log in via</h3>
               <div className="social-icons">

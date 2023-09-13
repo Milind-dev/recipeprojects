@@ -4,7 +4,7 @@ export default function Dashboards() {
   return (
     <React.Fragment>
       <div className="dashboardcontainer">
-          <a href="/register">Register</a>
+          <a href="/register">sign up</a>
           <a href="/login">Login</a>
         <p>
           Food provides energy to the body. In the absence of energy, the body
