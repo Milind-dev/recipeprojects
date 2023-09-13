@@ -7,7 +7,7 @@ After submitting the password, it is encrypted and saved in the database on the 
 
 The user searches for specific terms such as pizza and yogurt. That key is kept in a third-party API and .env contains the API key which is  .gitignore.
 
-When a certain query is searched, the query data is displayed on the screen. Now, the user adds data to the cart.
+When a certain query is searched, the query data is displayed on the screen. Now, the user adds data to the cart. cart are user query specific item
 
  
 # How to work on the project
