@@ -18,10 +18,10 @@ mongodb installation is mandatory
 
 # how to run 
 ### clone file https://github.com/Milind-dev/recipeprojects
-npm install for node_modules install both front and backend side
-react run - npm start
-mongodb - connect mongodbcampus
-node js -  npm run dev
+### npm install for node_modules install both front and backend side
+### react run - npm start
+### mongodb - connect mongodbcampus
+### node js -  npm run dev
 
 ### problems ErrorstackCapture
-restart =>  mongodbcampus and restart backend npm run dev
+### restart =>  mongodbcampus  restart again and restart backend also command by npm run dev
