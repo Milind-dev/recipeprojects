@@ -47,6 +47,9 @@
   .spinloader{
     margin-left: -9vh;
   }
+
+
+
   @media (min-width: 320px)  and (max-width: 776px) {
     .foodinputcontainer {
       /* background-color: teal; */
@@ -97,11 +100,7 @@
         display: inline-grid;
         padding-left: 1vh;
     }
-
-  .spinloader{
-    position: absolute;
-    left: 35vh;  }
-  }
+    }
 
   @media (min-width: 777px)  and (max-width: 900px) {
     .foodinputcontainer {

@@ -12,13 +12,13 @@ const Localfiles = () => {
   const [foodstores, setfoodstores] = useState([]);
   const [addcartspoon, setaddcartspoon] = useState([]);
 
-  // const [errormessage,seterrormsg] = useState("error msg");
-  const [inputloader,setinputLoader] = useState("loader...");
+  const [inputloader, setinputLoader] = useState("loader...");
 
-
-  const handleSearchFood = async ()  => {
-    console.log("e.target.value")
-    try{
+  const handleSearchFood = async () => {
+    console.log("e.target.value");
+    // const apikey = process.env.apikeyverify;
+    // {process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_MODE : process.env.apikeyverify}
+    try {
       const datas = await fetch(
         `https://api.spoonacular.com/food/products/search?apiKey=729156a799914269b59cacd3b718b152&query=${inputsearch}`,
         {
@@ -27,23 +27,18 @@ const Localfiles = () => {
             accept: "application/json",
           },
         }
-        );
-        const searchresult = await datas.json();
-      console.log("saerc",searchresult.status)
-      if(searchresult.status === "failure"){
-        return setLoading(false)
+      );
+      const searchresult = await datas.json();
+      console.log("saerc", searchresult.status);
+      if (searchresult.status === "failure") {
+        return setLoading(false);
       }
-      setLoading(true)
+      setLoading(true);
       setfoodstores(searchresult.products);
-      // setfoodstores(searchresult)
+    } catch (err) {
+      setinputLoader("error");
     }
-    catch(err){
-       // seterrormsg("error")
-       setinputLoader("error")
-
-    }
-
-  }
+  };
 
   const handleSortAsc = () => {
     const sortquery = foodstores.sort((a, b) => {
@@ -84,16 +79,11 @@ const Localfiles = () => {
     setaddcartspoon([...addcartspoon, item]);
   };
 
-
-
-
-
   useEffect(() => {
     setTimeout(() => {
-    
-      handleSearchFood()
+      handleSearchFood();
     }, 1000);
-}, [inputsearch]);
+  }, [inputsearch]);
 
   return (
     <React.Fragment>
@@ -104,7 +94,7 @@ const Localfiles = () => {
             type="text"
             className="foodsearchinput"
             value={inputsearch}
-            onChange={(e) =>  setinputsearch(e.target.value)}
+            onChange={(e) => setinputsearch(e.target.value)}
             placeholder="search food"
           />
         </div>
@@ -114,7 +104,7 @@ const Localfiles = () => {
         <button className="addsortAsc" onClick={handleSortDesc}>
           Desc
         </button>
-   
+
         {loading ? (
           foodstores.map((item, index) => {
             return (
@@ -136,9 +126,13 @@ const Localfiles = () => {
             );
           })
         ) : (
-          <div style={{marginLeft:"79vh"}}>
-            <span> <p style={{marginLeft:"-92vh"}}>{inputloader}</p><Rings color="#00BFFF" height={180} width={180} /></span>
-        </div>
+          <div style={{ marginLeft: "79vh" }}>
+            <span>
+              {" "}
+              <p style={{ marginLeft: "-92vh" }}>{inputloader}</p>
+              <Rings color="#00BFFF" height={180} width={180} />
+            </span>
+          </div>
         )}
       </div>
     </React.Fragment>
